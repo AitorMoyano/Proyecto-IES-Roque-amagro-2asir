@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Equipos</title>
+</head>
+<body>
+    <h1>Listado de equipos</h1>
+    <ul>
+        {% for equipo in equipos %}
+            <li>{{ equipo.nombre }} - {{ equipo.ip }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
