@@ -1,16 +1,13 @@
-from flask import Blueprint, render_template
-from . import mysql
+from flask import Blueprint, current_app
 
-main = Blueprint('main', __name__)
+routes = Blueprint('routes', __name__)
 
-@main.route('/')
+@routes.route('/')
 def index():
-    return render_template('index.html')
-
-@main.route('/equipos')
-def equipos():
-    cursor = mysql.connection.cursor(dictionary=True)
+    conn = current_app.get_db_connection()
+    cursor = conn.cursor()
     cursor.execute("SELECT * FROM equipos")
-    equipos = cursor.fetchall()
+    datos = cursor.fetchall()
     cursor.close()
-    return render_template('equipos.html', equipos=equipos)
+    conn.close()
+    return "OK"
