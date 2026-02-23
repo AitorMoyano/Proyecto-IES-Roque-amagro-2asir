@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Panel de Backups</title>
-</head>
-<body>
-    <h1>Bienvenido al Sistema de Backups</h1>
-    <a href="/equipos">Ver equipos</a>
-</body>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Panel Backup System</title>
+  </head>
+  <body>
+    <h1>Backup System</h1>
+    <ul>
+      <li>Usuarios: {{ total_usuarios }}</li>
+      <li>Equipos: {{ total_equipos }}</li>
+      <li>Tareas de backup: {{ total_tareas }}</li>
+      <li>Copias: {{ total_copias }}</li>
+      <li>Logs: {{ total_logs }}</li>
+    </ul>
+  </body>
 </html>
